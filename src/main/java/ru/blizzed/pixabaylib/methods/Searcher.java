@@ -22,6 +22,7 @@ import ru.blizzed.pixabaylib.model.PixabayResult;
 import ru.blizzed.pixabaylib.model.PixabayVideo;
 import ru.blizzed.pixabaylib.params.Param;
 import ru.blizzed.pixabaylib.params.ParamsConverter;
+import ru.blizzed.pixabaylib.params.PixabayParams;
 
 public class Searcher {
 
@@ -37,6 +38,14 @@ public class Searcher {
 
     public PixabayCaller<PixabayResult<PixabayVideo>> video(Param... params) {
         return new PixabayCaller<>(searchCaller.video(ParamsConverter.asMap(params)));
+    }
+
+    public PixabayCaller<PixabayResult<PixabayImage>> image(String query, Param... params) {
+        return new PixabayCaller<>(searchCaller.image(ParamsConverter.asMap(PixabayParams.QUERY.of(query), params)));
+    }
+
+    public PixabayCaller<PixabayResult<PixabayVideo>> video(String query, Param... params) {
+        return new PixabayCaller<>(searchCaller.video(ParamsConverter.asMap(PixabayParams.QUERY.of(query), params)));
     }
 
 }
