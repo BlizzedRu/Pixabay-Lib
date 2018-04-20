@@ -23,7 +23,6 @@ import ru.blizzed.pixabaylib.model.PixabayResult;
 import ru.blizzed.pixabaylib.model.PixabayVideo;
 import rx.Observable;
 
-import java.util.List;
 import java.util.Map;
 
 public interface RxSearchCaller {
@@ -31,7 +30,7 @@ public interface RxSearchCaller {
     @GET("./")
     Observable<PixabayResult<PixabayImage>> image(@QueryMap Map<String, String> params);
 
-    @GET("/videos/")
+    @GET("videos/")
     Observable<PixabayResult<PixabayVideo>> video(@QueryMap Map<String, String> params);
 
 }

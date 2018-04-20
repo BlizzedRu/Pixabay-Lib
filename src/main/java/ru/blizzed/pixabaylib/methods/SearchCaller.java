@@ -30,7 +30,7 @@ public interface SearchCaller {
     @GET("./")
     Call<PixabayResult<PixabayImage>> image(@QueryMap Map<String, String> params);
 
-    @GET("/videos/")
+    @GET("videos/")
     Call<PixabayResult<PixabayVideo>> video(@QueryMap Map<String, String> params);
 
 }

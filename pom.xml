@@ -23,6 +23,10 @@
     <groupId>ru.blizzed</groupId>
     <artifactId>pixabay-lib</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>pixabay-lib</name>
+    <description>Simple Java library for Pixabay.com API</description>
+    <url>https://github.com/BlizzedRu/Pixabay-Lib</url>
 
     <properties>
         <java.version>1.8</java.version>

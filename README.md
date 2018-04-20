@@ -1,7 +1,7 @@
-# Pixabay-lib
+# Pixabay-Lib
 Simple Java library for [Pixabay](https://pixabay.com) API
 
-**Pixabay-lib** provides easy access to all available methods of [Pixabay API][doc]. 
+**Pixabay-Lib** provides easy access to all available methods of [Pixabay API][doc]. 
 Can be useful for grabbing some pictures and videos from different categories.
 
 * Contains Java object wrappers for any API response
@@ -20,7 +20,7 @@ In your pom.xml inside the *\<dependencies>* tag
     ...
     <dependency>
         <groupId>ru.blizzed</groupId>
-        <artifactId>pixabaylib</artifactId>
+        <artifactId>pixabay-lib</artifactId>
         <version>1.0.0</version>
     </dependency>
 </dependencies>
@@ -34,7 +34,7 @@ In your build.gradle file inside the *dependencies* section
 ``` 
 dependencies {
    ...
-   implementation 'ru.blizzed:pixabaylib:1.0.0'
+   implementation 'ru.blizzed:pixabay-lib:1.0.0'
 }
 ```
   
@@ -42,7 +42,7 @@ dependencies {
 ``` 
 dependencies {
     ...
-    compile 'ru.blizzed:pixabaylib:1.0.0'
+    compile 'ru.blizzed:pixabay-lib:1.0.0'
 }
 ```
   
