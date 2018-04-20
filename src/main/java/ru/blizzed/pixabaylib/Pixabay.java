@@ -16,10 +16,11 @@
 
 package ru.blizzed.pixabaylib;
 
-import com.google.gson.*;
-import okhttp3.*;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.blizzed.pixabaylib.methods.RxSearchCaller;
 import ru.blizzed.pixabaylib.methods.RxSearcher;
@@ -27,8 +28,6 @@ import ru.blizzed.pixabaylib.methods.SearchCaller;
 import ru.blizzed.pixabaylib.methods.Searcher;
 import ru.blizzed.pixabaylib.params.LangParam;
 import ru.blizzed.pixabaylib.params.PixabayParams;
-
-import java.lang.reflect.Type;
 
 public final class Pixabay {
 
@@ -72,7 +71,7 @@ public final class Pixabay {
                 .build();
 
         retrofit = new Retrofit.Builder()
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(ROOT_URL)
                 .client(httpClient)
