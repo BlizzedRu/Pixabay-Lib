@@ -16,12 +16,12 @@
 
 package ru.blizzed.pixabaylib.methods;
 
+import io.reactivex.Observable;
 import ru.blizzed.pixabaylib.model.PixabayImage;
 import ru.blizzed.pixabaylib.model.PixabayResult;
 import ru.blizzed.pixabaylib.model.PixabayVideo;
 import ru.blizzed.pixabaylib.params.Param;
 import ru.blizzed.pixabaylib.params.ParamsConverter;
-import rx.Observable;
 
 public class RxSearcher {
 

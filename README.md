@@ -21,7 +21,7 @@ In your pom.xml inside the *\<dependencies>* tag
     <dependency>
         <groupId>ru.blizzed</groupId>
         <artifactId>pixabay-lib</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
 </dependencies>
 ```
@@ -34,7 +34,7 @@ In your build.gradle file inside the *dependencies* section
 ``` 
 dependencies {
    ...
-   implementation 'ru.blizzed:pixabay-lib:1.0.0'
+   implementation 'ru.blizzed:pixabay-lib:1.0.1'
 }
 ```
   
@@ -42,7 +42,7 @@ dependencies {
 ``` 
 dependencies {
     ...
-    compile 'ru.blizzed:pixabay-lib:1.0.0'
+    compile 'ru.blizzed:pixabay-lib:1.0.1'
 }
 ```
   

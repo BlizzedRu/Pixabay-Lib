@@ -16,12 +16,12 @@
 
 package ru.blizzed.pixabaylib.methods;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
 import ru.blizzed.pixabaylib.model.PixabayImage;
 import ru.blizzed.pixabaylib.model.PixabayResult;
 import ru.blizzed.pixabaylib.model.PixabayVideo;
-import rx.Observable;
 
 import java.util.Map;
 
