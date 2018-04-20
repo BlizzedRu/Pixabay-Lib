@@ -18,6 +18,7 @@ package ru.blizzed.pixabaylib.params;
 
 public final class PixabayParams {
 
+    public static final Param<String> QUERY = new Param<>("q");
     public static final Param<String> KEY = new Param<>("key");
     public static final LangParam LANG = new LangParam();
     public static final ImageTypeParam IMAGE_TYPE = new ImageTypeParam();

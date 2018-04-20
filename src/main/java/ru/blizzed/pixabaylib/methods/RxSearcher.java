@@ -22,6 +22,7 @@ import ru.blizzed.pixabaylib.model.PixabayResult;
 import ru.blizzed.pixabaylib.model.PixabayVideo;
 import ru.blizzed.pixabaylib.params.Param;
 import ru.blizzed.pixabaylib.params.ParamsConverter;
+import ru.blizzed.pixabaylib.params.PixabayParams;
 
 public class RxSearcher {
 
@@ -37,6 +38,14 @@ public class RxSearcher {
 
     public Observable<PixabayResult<PixabayVideo>> video(Param... params) {
         return searchCaller.video(ParamsConverter.asMap(params));
+    }
+
+    public Observable<PixabayResult<PixabayImage>> image(String query, Param... params) {
+        return searchCaller.image(ParamsConverter.asMap(PixabayParams.QUERY.of(query), params));
+    }
+
+    public Observable<PixabayResult<PixabayVideo>> video(String query, Param... params) {
+        return searchCaller.video(ParamsConverter.asMap(PixabayParams.QUERY.of(query), params));
     }
 
 }

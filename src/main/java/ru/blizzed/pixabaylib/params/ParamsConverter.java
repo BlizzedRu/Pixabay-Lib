@@ -30,4 +30,10 @@ public final class ParamsConverter {
         return map;
     }
 
+    public static Map<String, String> asMap(Param param, Param... params) {
+        Map<String, String> map = asMap(new Param[]{param});
+        map.putAll(asMap(params));
+        return map;
+    }
+
 }
