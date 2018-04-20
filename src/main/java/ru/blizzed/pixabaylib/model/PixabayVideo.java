@@ -16,16 +16,15 @@
 
 package ru.blizzed.pixabaylib.model;
 
+import com.google.gson.*;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.google.gson.*;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.sun.istack.internal.Nullable;
 
 public class PixabayVideo implements Serializable {
 
@@ -140,7 +139,6 @@ public class PixabayVideo implements Serializable {
             videoMap = new HashMap<>();
         }
 
-        @Nullable
         public Video get(VideoSize size) {
             if (videoMap.containsKey(size))
                 return videoMap.get(size);

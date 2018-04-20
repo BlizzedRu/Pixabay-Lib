@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.blizzed</groupId>
-    <artifactId>pixabay-lib</artifactId>
+    <artifactId>pixabaylib</artifactId>
     <version>1.0.0</version>
 
     <properties>
