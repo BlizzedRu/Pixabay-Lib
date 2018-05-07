@@ -16,7 +16,8 @@
 
 package ru.blizzed.pixabaylib.params;
 
-import java.util.Arrays;
+import io.reactivex.Observable;
+
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -26,7 +27,7 @@ public final class ParamsConverter {
     public static Map<String, String> asMap(Param... params) {
         if (params == null) return Collections.emptyMap();
         Map<String, String> map = new LinkedHashMap<>();
-        Arrays.stream(params).forEach(p -> map.put(p.name(), p.toString().toLowerCase()));
+        Observable.fromArray(params).forEach(p -> map.put(p.name(), p.toString().toLowerCase()));
         return map;
     }
 

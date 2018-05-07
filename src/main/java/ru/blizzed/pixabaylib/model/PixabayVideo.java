@@ -19,10 +19,10 @@ package ru.blizzed.pixabaylib.model;
 import com.google.gson.*;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.reactivex.Observable;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -151,7 +151,7 @@ public class PixabayVideo implements Serializable {
                 Videos videos = new Videos();
                 JsonObject videosObject = jsonElement.getAsJsonObject();
 
-                Arrays.stream(VideoSize.values())
+                Observable.fromArray(VideoSize.values())
                         .map(Enum::name)
                         .map(String::toLowerCase)
                         .forEach(size -> {
