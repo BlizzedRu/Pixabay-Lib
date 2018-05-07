@@ -16,9 +16,7 @@
 
 package ru.blizzed.pixabaylib;
 
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
+import okhttp3.*;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -28,6 +26,8 @@ import ru.blizzed.pixabaylib.methods.SearchCaller;
 import ru.blizzed.pixabaylib.methods.Searcher;
 import ru.blizzed.pixabaylib.params.LangParam;
 import ru.blizzed.pixabaylib.params.PixabayParams;
+
+import java.util.Collections;
 
 public final class Pixabay {
 
@@ -58,7 +58,17 @@ public final class Pixabay {
         // Adding an API key and lang param (if present) to all requests
         if (lang == null) lang = LangParam.Lang.EN;
 
+        ConnectionSpec spec = new
+                ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
+                .tlsVersions(TlsVersion.TLS_1_2)
+                .cipherSuites(
+                        CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        CipherSuite.TLS_DHE_RSA_WITH_AES_128_GCM_SHA256)
+                .build();
+
         OkHttpClient httpClient = new OkHttpClient.Builder()
+                .connectionSpecs(Collections.singletonList(spec))
                 .addInterceptor((chain -> {
                     Request request = chain.request();
                     HttpUrl url = request.url().newBuilder()
